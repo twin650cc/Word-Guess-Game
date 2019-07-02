@@ -6,7 +6,6 @@ var s
 var g
 console.log(composer)
 console.log(guessesLeft)
-document.getElementById("triesleft").innerHTML = guessesLeft
 
 function startup()
 {
@@ -17,28 +16,27 @@ function startup()
 
     s = answersList.join("");
     document.getElementById("answer").innerHTML = s
-    console.log(composer)
-   
 }
+
+
 
 function Letter()
 {
     var letter = document.getElementById("letter").value;
-console.log(letter)
-document.getElementById("triesleft").innerHTML = guessesLeft;
+    console.log(letter)
+    document.getElementById("triesleft").innerHTML = guessesLeft;
 
-        for (var j=0; j<composer.lenght;j++)
+
+for(var j = 0; j <composer.length ; j++)
+    {
+    
+    if (composer[j]== letter)
         {
-             if (composer[j] === letter)
-            {
-             answersList[j] = letter;
-            }
-            
-        console.log(answersList)
-
+             answersList[j]= letter;
         }
-        g = answersList;
-        document.getElementById("answer").innerHTML = g;
-        guessesLeft--;
+            document.getElementById("answer").innerHTML = answersList.join("");
+       
+        
+    }
+    guessesLeft--
 }
-
